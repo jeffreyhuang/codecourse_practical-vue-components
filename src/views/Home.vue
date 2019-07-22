@@ -1,6 +1,6 @@
 <template>
   <div>
-    <AppInput name="email" type="password"/>
+    <AppInput name="password" type="password"/>
   </div>
 </template>
 

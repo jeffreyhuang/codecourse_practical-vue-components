@@ -1,23 +1,50 @@
 <template>
-  <input
-    :type="text"
-    :name="name"
-    :id="name"
-    class="form-control"
-  >
+  <div>
+    <input
+      :type="inputType"
+      :name="name"
+      :id="name"
+      class="form-control"
+    >
+    <a
+      href="#"
+      v-if="type === 'password'"
+      @click.prevent="passwordRevealed = !passwordRevealed"
+    >
+      {{ passwordRevealed ? 'Hide' : 'Reveal' }} password
+    </a>
+  </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      passwordRevealed: false
+    }
+  },
+
   props: {
     name: {
       type: String,
       required: true
     },
-    text: {
+    type: {
       type: String,
       required: false
     }
-  }
+  },
+
+  computed: {
+    inputType () {
+      return this.passwordRevealed ? 'text' : this.type
+    }
+  },
+
+  // methods: {
+  //   toggleVisibility () {
+  //     this.inputType = this.inputType === 'password' ? 'text': 'password'
+  //   }
+  // }
 }
 </script>
