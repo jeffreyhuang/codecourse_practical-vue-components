@@ -5,6 +5,7 @@
       :name="name"
       :id="name"
       class="form-control"
+      @input="$emit('input', $event.target.value)"
     >
     <a
       href="#"
@@ -39,12 +40,6 @@ export default {
     inputType () {
       return this.passwordRevealed ? 'text' : this.type
     }
-  },
-
-  // methods: {
-  //   toggleVisibility () {
-  //     this.inputType = this.inputType === 'password' ? 'text': 'password'
-  //   }
-  // }
+  }
 }
 </script>
