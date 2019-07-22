@@ -9,8 +9,10 @@
     <a
       href="#"
       v-if="type === 'password'"
-      @click.prevent="toggleVisibility"
-    >Reveal password</a>
+      @click.prevent="passwordRevealed = !passwordRevealed"
+    >
+      {{ passwordRevealed ? 'Hide' : 'Reveal' }} password
+    </a>
   </div>
 </template>
 
@@ -18,7 +20,7 @@
 export default {
   data () {
     return {
-      inputType: this.type
+      passwordRevealed: false
     }
   },
 
@@ -33,10 +35,16 @@ export default {
     }
   },
 
-  methods: {
-    toggleVisibility () {
-      this.inputType = this.inputType === 'password' ? 'text': 'password'
+  computed: {
+    inputType () {
+      return this.passwordRevealed ? 'text' : this.type
     }
-  }
+  },
+
+  // methods: {
+  //   toggleVisibility () {
+  //     this.inputType = this.inputType === 'password' ? 'text': 'password'
+  //   }
+  // }
 }
 </script>
