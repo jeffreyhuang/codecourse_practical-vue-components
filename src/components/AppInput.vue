@@ -1,6 +1,6 @@
 <template>
   <input
-    type="text"
+    :type="text"
     :name="name"
     :id="name"
     class="form-control"
@@ -13,6 +13,10 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    text: {
+      type: String,
+      required: false
     }
   }
 }
