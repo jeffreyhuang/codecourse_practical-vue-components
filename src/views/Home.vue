@@ -1,8 +1,6 @@
 <template>
   <div>
-    {{ form }}
-
-    <AppInput name="password" v-model="form.email"/>
+    <AppInput name="password" placeholder="e.g. jeffrey@kingdomfullstack.com"/>
   </div>
 </template>
 
