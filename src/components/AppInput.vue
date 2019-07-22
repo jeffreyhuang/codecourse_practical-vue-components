@@ -5,6 +5,7 @@
       :name="name"
       :id="name"
       class="form-control"
+      :value="value"
       @input="$emit('input', $event.target.value)"
     >
     <a
@@ -26,6 +27,11 @@ export default {
   },
 
   props: {
+    value: {
+      type: String,
+      required: false,
+      default: ''
+    },
     name: {
       type: String,
       required: true

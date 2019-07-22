@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       form: {
-        email: ''
+        email: 'jeffrey@kingdomfullstack.com'
       }
     }
   }
